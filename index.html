@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umbrella Dot Records</title>
+  <!-- Google Fonts 読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* 画面中央にロゴをドン！ */
-    html, body { height: 100%; margin: 0; }
     body {
-      background: #000;               /* 黒背景 */
-      display: grid;
-      place-items: center;            /* 中央寄せ */
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      color: #f0f0f0;
     }
-    img {
-      width: min(90vw, 560px);        /* 端末に合わせて縮小 */
-      height: auto;
+    .site-title {
+      font-size: 3rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    .logo {
+      max-width: 400px;
+      width: 80%;
+      margin: 0 auto;
       display: block;
     }
   </style>
 </head>
 <body>
-  <!-- ここのファイル名はリポジトリの画像と完全一致させる（大文字小文字も） -->
-  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" />
+
+  <!-- テキストロゴ -->
+  <div class="site-title">Umbrella Dot Records</div>
+
+  <!-- ロゴ画像 -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
+
 </body>
 </html>
