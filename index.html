@@ -11,14 +11,14 @@
       font-family: Arial, sans-serif;
     }
     .main-logo {
-      margin-top: 100px;   /* 上の余白を広めに */
+      margin-top: 100px;
       width: 60%;
       max-width: 600px;
       height: auto;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 40px; /* 下の余白を狭めに */
+      margin-bottom: 40px;
     }
     .sub-logo {
       margin-top: 40px;
@@ -34,10 +34,14 @@
       margin-bottom: 60px;
     }
     .sns-links img {
-      height: 120px;
+      height: 120px;  /* デフォルトは120px */
       width: auto;
       transition: transform 0.3s;
       cursor: pointer;
+    }
+    /* Music Logo だけ小さく（70% → 120px * 0.7 = 84px） */
+    .music-logo {
+      height: 84px;
     }
     .sns-links img:hover {
       transform: scale(1.2);
@@ -60,7 +64,7 @@
 
     <!-- Music Link (Linkcore) -->
     <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank">
-      <img src="music_logo.gif" alt="Music Link">
+      <img src="music_logo.gif" alt="Music Link" class="music-logo">
     </a>
   </div>
 </body>
