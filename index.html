@@ -1,3 +1,9 @@
+
+  </style>
+</head>
+<body>
+  <!-- ロゴ -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,37 +12,40 @@
   <title>Umbrella Dot Records</title>
   <style>
     body {
-      background-color: black;
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* 背景は黒 */
       text-align: center;
-      color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', serif;
+      color: #fff;
     }
 
-    /* ロゴ画像 */
-    .logo {
-      margin-top: 50px;
-      width: 300px;
-    }
-
-    /* キャッチコピー */
-    .headline {
-      margin-top: 20px;
+    h1 {
       font-size: 48px;
-      font-weight: bold;
-      color: blue; /* 文字の色 */
-      text-shadow:
-        -2px -2px 0 yellow,
-         2px -2px 0 yellow,
-        -2px  2px 0 yellow,
-         2px  2px 0 yellow; /* 黄色の縁取り */
+      color: #cfe8dd; /* 淡いグリーン系（ロゴに合わせた色） */
+      text-shadow: 
+        2px 2px 0 #0f2f2a,   /* 濃い緑の縁取り */
+        -2px -2px 0 #0f2f2a,
+        2px -2px 0 #0f2f2a,
+        -2px 2px 0 #0f2f2a,
+        3px 3px 6px rgba(0,0,0,0.7); /* ぼかし影でビデオ感 */
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 50%;
+      max-width: 500px;
+      height: auto;
+      margin: 20px auto;
     }
   </style>
 </head>
 <body>
-  <!-- ロゴ -->
-  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
+  <!-- タイトル文字 -->
+  <h1>Umbrella Dot Records</h1>
 
-  <!-- キャッチコピー -->
-  <div class="headline">Umbrella Dot Records</div>
+  <!-- ロゴ画像 -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
 </body>
 </html>
