@@ -3,92 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Umbrella Dot Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{
-      --bg:#000;
-      --fg:#fff;
-    }
-    html,body{height:100%}
-    body{
-      margin:0; color:var(--fg); background:var(--bg); text-align:center;
+    body {
+      background: url('background_texture.jpg') repeat; /* ← ロゴ画像から切り出したテクスチャを使う */
+      background-size: 300px; /* テクスチャの大きさ調整 */
+      color: white;
+      text-align: center;
       font-family: Arial, sans-serif;
-      overflow-x:hidden;
-      position:relative;
-
-      /* ▼ 背景にロゴから切り出したタイルを敷き詰め */
-      background-image: url("umbrella_texture_tile.png");
-      background-repeat: repeat;
-      background-size: 512px 512px;
+      margin: 0;
+      padding: 0;
     }
 
-    /* ===== ビネット & 走査線（背景に深みを出す） ===== */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(120% 120% at 50% 20%, rgba(255,255,255,0.04), rgba(0,0,0,0) 40%),
-        radial-gradient(120% 160% at 50% 120%, rgba(0,0,0,0), rgba(0,0,0,0.35) 70%);
-      z-index:-1;
-    }
-    body::after{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.04) 0px,
-          rgba(255,255,255,0.04) 1px,
-          rgba(0,0,0,0) 2px,
-          rgba(0,0,0,0) 3px
-        );
-      mix-blend-mode: soft-light;
-      opacity:.4;
-      z-index:-1;
+    /* メインタイトルロゴ */
+    .main-logo {
+      margin-top: 80px;   /* 上の余白（広め） */
+      margin-bottom: 80px;/* 下の余白（広め） */
+      max-width: 60%;     /* 60%縮小 */
+      height: auto;
     }
 
-    /* ===== ロゴ ===== */
-    .main-logo{
-      margin-top:100px; width:60%; max-width:600px; height:auto;
-      display:block; margin-inline:auto;
-      margin-bottom:40px;
-      image-rendering: pixelated;
-    }
-    .sub-logo{
-      margin-top:40px; max-width:400px; width:100%; height:auto;
+    /* サブロゴ */
+    .sub-logo {
+      margin-top: 80px;
+      max-width: 400px;
+      height: auto;
     }
 
-    /* ===== SNSリンク ===== */
-    .sns-links{
-      display:flex; justify-content:center; align-items:center;
-      gap:50px; margin:60px 0;
+    /* SNSリンク */
+    .sns-links {
+      display: flex;
+      justify-content: center;
+      gap: 80px;  /* アイコン同士の間隔 */
+      margin-top: 100px;
+      margin-bottom: 100px;
     }
-    .sns-links img{
-      height:120px; width:auto;
-      transition:transform .3s; cursor:pointer;
-      image-rendering: pixelated;
+    .sns-links img {
+      height: 100px; /* アイコン共通サイズ */
+      width: auto;
+      transition: transform 0.3s;
+      cursor: pointer;
     }
-    .sns-links img.music-logo{
-      height:80px !important; /* ← Musicロゴは少し小さめ */
-    }
-    .sns-links img:hover{ transform:scale(1.2); }
-
-    /* ===== スマホ最適化 ===== */
-    @media (max-width: 600px){
-      .main-logo{ width:80%; max-width:480px; margin-top:90px; margin-bottom:36px; }
-      .sub-logo{ max-width:320px; margin-top:36px; }
-      .sns-links{ gap:28px; margin:48px 0 56px; }
-      .sns-links img{ height:100px; }
-      .sns-links img.music-logo{ height:70px !important; }
-      body::after{ opacity:.28; }
-    }
-    @media (max-width: 360px){
-      .main-logo{ width:85%; margin-top:80px; }
-      .sns-links{ gap:22px; }
-      .sns-links img{ height:90px; }
-      .sns-links img.music-logo{ height:64px !important; }
+    .sns-links img:hover {
+      transform: scale(1.2); /* ホバーで拡大 */
     }
   </style>
 </head>
@@ -101,11 +57,14 @@
 
   <!-- SNSリンク -->
   <div class="sns-links">
-    <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" rel="noopener">
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank">
       <img src="youtube_logo.gif" alt="YouTube">
     </a>
-    <a href="https://linkco.re/R9DNs8c9?lang=ja" target="_blank" rel="noopener">
-      <img src="music_logo.gif" alt="Music Link" class="music-logo">
+
+    <!-- Music Link (Linkcore) -->
+    <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank">
+      <img src="music_logo.gif" alt="Music Link">
     </a>
   </div>
 </body>
