@@ -4,38 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umbrella Dot Records</title>
-  <!-- Google Fonts 読み込み -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
+      background-color: black;
       text-align: center;
-      font-family: 'Cinzel', serif;
-      color: #f0f0f0;
+      color: white;
+      font-family: Arial, sans-serif;
     }
-    .site-title {
-      font-size: 3rem;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
+
+    /* ロゴ画像 */
     .logo {
-      max-width: 400px;
-      width: 80%;
-      margin: 0 auto;
-      display: block;
+      margin-top: 50px;
+      width: 300px;
+    }
+
+    /* キャッチコピー */
+    .headline {
+      margin-top: 20px;
+      font-size: 48px;
+      font-weight: bold;
+      color: blue; /* 文字の色 */
+      text-shadow:
+        -2px -2px 0 yellow,
+         2px -2px 0 yellow,
+        -2px  2px 0 yellow,
+         2px  2px 0 yellow; /* 黄色の縁取り */
     }
   </style>
 </head>
 <body>
-
-  <!-- テキストロゴ -->
-  <div class="site-title">Umbrella Dot Records</div>
-
-  <!-- ロゴ画像 -->
+  <!-- ロゴ -->
   <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
 
+  <!-- キャッチコピー -->
+  <div class="headline">Umbrella Dot Records</div>
 </body>
 </html>
