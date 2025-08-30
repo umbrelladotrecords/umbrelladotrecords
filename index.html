@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>Umbrella Dot Records</title>
@@ -8,46 +8,53 @@
       background-color: black;
       color: white;
       text-align: center;
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
     }
-    .logo {
-      margin-top: 30px;
+    .main-logo {
+      margin-top: 40px;
+      max-width: 90%;
+      height: auto;
     }
-    .main-image {
-      width: 400px;
-      max-width: 80%;
+    .sub-logo {
+      margin-top: 40px;
+      max-width: 400px;
+      height: auto;
     }
-    .youtube-link {
-      display: block;
-      margin: 50px auto 40px; /* 上に余白つけて一番下に配置 */
-      width: 120px; /* サイズを大きめに変更 */
+    .sns-links {
+      display: flex;
+      justify-content: center;
+      gap: 50px;  /* ロゴ同士の間隔 */
+      margin-top: 60px;
+      margin-bottom: 60px;
     }
-    .youtube-link img {
-      width: 100%;
+    .sns-links img {
+      width: 120px; /* ロゴの大きさ調整 */
+      transition: transform 0.3s;
       cursor: pointer;
-      transition: transform 0.2s;
     }
-    .youtube-link img:hover {
-      transform: scale(1.1); /* ホバーで少し拡大して押しやすさUP */
+    .sns-links img:hover {
+      transform: scale(1.2); /* ホバーで拡大 */
     }
   </style>
 </head>
 <body>
-  <!-- メインロゴ -->
-  <div class="logo">
-    <img src="UDR_HP_logo_main.PNG" alt="Umbrella Dot Records" class="main-image">
-  </div>
+  <!-- メインタイトルロゴ -->
+  <img src="UDR_HP_logo_main.PNG" alt="Umbrella Dot Records" class="main-logo">
 
-  <!-- 下の背景ロゴ -->
-  <div>
-    <img src="IMG_1705.jpeg" alt="Background Logo" class="main-image">
-  </div>
+  <!-- サブロゴ -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Logo" class="sub-logo">
 
-  <!-- ページ一番下の YouTube アイコン -->
-  <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" class="youtube-link">
-    <img src="youtube_logo.gif" alt="YouTube">
-  </a>
+  <!-- SNSリンク（横並び） -->
+  <div class="sns-links">
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank">
+      <img src="youtube_logo.gif" alt="YouTube">
+    </a>
+
+    <!-- Music Link (Linkcore) -->
+    <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank">
+      <img src="music_logo.gif" alt="Music Link">
+    </a>
+  </div>
 </body>
 </html>
