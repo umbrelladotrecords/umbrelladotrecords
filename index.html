@@ -14,16 +14,16 @@
     .sub-logo { margin-top:40px; max-width:400px; width:100%; height:auto; }
 
     .sns-links {
-      display:flex; justify-content:center; gap:50px; margin:60px 0;
+      display:flex; justify-content:center; align-items:center; /* ← 高さを中央揃え */
+      gap:50px; margin:60px 0;
     }
-    /* 共通（YouTube含む） */
     .sns-links img {
       height:120px; width:auto; transition:transform .3s; cursor:pointer;
     }
+    .sns-links img.music-logo {
+      height:90px !important; /* ← 小さくしすぎず、YouTubeとのバランスを取る */
+    }
     .sns-links img:hover { transform:scale(1.2); }
-
-    /* ← 必ず最後に置く：music だけ小さく */
-    .sns-links img.music-logo { height:59px !important; }
   </style>
 </head>
 <body>
@@ -42,7 +42,7 @@
 
     <!-- Music Link (Linkcore) -->
     <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank" rel="noopener">
-      <img src="music_logo.gif" alt="Music Link" class="music-logo" style="height:59px"> <!-- 念のためインラインでも指定 -->
+      <img src="music_logo.gif" alt="Music Link" class="music-logo">
     </a>
   </div>
 </body>
