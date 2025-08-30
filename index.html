@@ -5,7 +5,6 @@
   <title>Umbrella Dot Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* ===== Base ===== */
     :root{
       --bg:#000;
       --fg:#fff;
@@ -18,8 +17,7 @@
       position:relative;
     }
 
-    /* ===== 3) 背景テクスチャ（ノイズ＋走査線＋ビネット）===== */
-    /* レイヤー1: ゆるいビネット */
+    /* ===== ノイズ・走査線・ビネット ===== */
     body::before{
       content:"";
       position:fixed; inset:0;
@@ -29,7 +27,6 @@
         radial-gradient(120% 160% at 50% 120%, rgba(0,0,0,0), rgba(0,0,0,0.35) 70%);
       z-index:-1;
     }
-    /* レイヤー2: 走査線（ごく薄く） */
     body::after{
       content:"";
       position:fixed; inset:0;
@@ -37,80 +34,63 @@
       background:
         repeating-linear-gradient(
           to bottom,
-          rgba(255,255,255,0.03) 0px,
-          rgba(255,255,255,0.03) 1px,
+          rgba(255,255,255,0.04) 0px,
+          rgba(255,255,255,0.04) 1px,
           rgba(0,0,0,0) 2px,
           rgba(0,0,0,0) 3px
         );
       mix-blend-mode: soft-light;
-      opacity:.35;
+      opacity:.4;
       z-index:-1;
     }
-    /* レイヤー3: 微細ノイズ（SVGベタ埋め） */
     .noise{
-      position:fixed; inset:-20px; /* 端の継ぎ目を隠すために少しはみ出す */
-      pointer-events:none; z-index:-1; opacity:.08; mix-blend-mode:overlay;
+      position:fixed; inset:-20px;
+      pointer-events:none; z-index:-1; 
+      opacity:.35; /* ← がっつり濃いめ */
+      mix-blend-mode:overlay;
       background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\">\
-<filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"2\" stitchTiles=\"stitch\"/></filter>\
-<rect width=\"120\" height=\"120\" filter=\"url(#n)\" opacity=\"0.5\"/>\
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">\
+<filter id="n"><feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="4" stitchTiles="stitch"/></filter>\
+<rect width="120" height="120" filter="url(#n)" opacity="0.6"/>\
 </svg>');
-      background-size: 240px 240px;
+      background-size: 180px 180px;
     }
 
-    /* ===== レイアウト（現状のまま）===== */
+    /* ===== ロゴ ===== */
     .main-logo{
-      margin-top:100px;       /* 上の余白広め */
-      width:60%;              /* PC基準の見た目を維持 */
-      max-width:600px;
-      height:auto;
+      margin-top:100px; width:60%; max-width:600px; height:auto;
       display:block; margin-inline:auto;
-      margin-bottom:40px;     /* 下ロゴとの距離は控えめ */
+      margin-bottom:40px;
       image-rendering: pixelated;
     }
     .sub-logo{
-      margin-top:40px;
-      max-width:400px; width:100%;
-      height:auto;
+      margin-top:40px; max-width:400px; width:100%; height:auto;
     }
 
+    /* ===== SNS ===== */
     .sns-links{
       display:flex; justify-content:center; align-items:center;
       gap:50px; margin:60px 0;
     }
-    /* 共通：YouTubeは120pxを維持 */
     .sns-links img{
       height:120px; width:auto;
       transition:transform .3s; cursor:pointer;
       image-rendering: pixelated;
     }
     .sns-links img.music-logo{
-      height:80px !important; /* Musicは少し小さめ（今の“いい感じ”キープ） */
+      height:80px !important; /* ← Musicロゴは少し小さめ */
     }
     .sns-links img:hover{ transform:scale(1.2); }
 
-    /* ===== 4) スマホ最適化（幅狭い時だけ優しく調整）===== */
+    /* ===== スマホ最適化 ===== */
     @media (max-width: 600px){
-      .main-logo{
-        width:80%;         /* スマホ時は気持ち小さくして収まり良く */
-        max-width:480px;
-        margin-top:90px;   /* 余白のバランス維持 */
-        margin-bottom:36px;
-      }
-      .sub-logo{
-        max-width:320px;
-        margin-top:36px;
-      }
-      .sns-links{
-        gap:28px;          /* アイコン間隔を少し詰める */
-        margin:48px 0 56px;
-      }
-      .sns-links img{ height:100px; }        /* YouTubeを少しだけ小さく */
-      .sns-links img.music-logo{ height:70px !important; } /* バランス取り */
-      body::after{ opacity:.28; }             /* 走査線を少し弱める（視認性優先） */
+      .main-logo{ width:80%; max-width:480px; margin-top:90px; margin-bottom:36px; }
+      .sub-logo{ max-width:320px; margin-top:36px; }
+      .sns-links{ gap:28px; margin:48px 0 56px; }
+      .sns-links img{ height:100px; }
+      .sns-links img.music-logo{ height:70px !important; }
+      body::after{ opacity:.28; }
     }
-
-    /* さらに小さい端末 */
     @media (max-width: 360px){
       .main-logo{ width:85%; margin-top:80px; }
       .sns-links{ gap:22px; }
@@ -120,7 +100,7 @@
   </style>
 </head>
 <body>
-  <!-- 背景ノイズレイヤー -->
+  <!-- ノイズレイヤー -->
   <div class="noise" aria-hidden="true"></div>
 
   <!-- メインタイトルロゴ -->
@@ -129,15 +109,12 @@
   <!-- サブロゴ -->
   <img src="IMG_1705.jpeg" alt="Umbrella Logo" class="sub-logo">
 
-  <!-- SNSリンク（横並び） -->
+  <!-- SNSリンク -->
   <div class="sns-links">
-    <!-- YouTube -->
     <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" rel="noopener">
       <img src="youtube_logo.gif" alt="YouTube">
     </a>
-
-    <!-- Music Link (Linkcore) -->
-    <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank" rel="noopener">
+    <a href="https://linkco.re/R9DNs8c9?lang=ja" target="_blank" rel="noopener">
       <img src="music_logo.gif" alt="Music Link" class="music-logo">
     </a>
   </div>
