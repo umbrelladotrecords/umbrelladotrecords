@@ -21,12 +21,16 @@
     }
     .youtube-link {
       display: block;
-      margin: 30px auto;
-      width: 60px;
+      margin: 50px auto 40px; /* 上に余白つけて一番下に配置 */
+      width: 120px; /* サイズを大きめに変更 */
     }
     .youtube-link img {
       width: 100%;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .youtube-link img:hover {
+      transform: scale(1.1); /* ホバーで少し拡大して押しやすさUP */
     }
   </style>
 </head>
@@ -36,14 +40,14 @@
     <img src="UDR_HP_logo_main.PNG" alt="Umbrella Dot Records" class="main-image">
   </div>
 
-  <!-- YouTube アイコン（クリックで飛ぶ） -->
-  <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" class="youtube-link">
-    <img src="youtube_logo.gif" alt="YouTube">
-  </a>
-
   <!-- 下の背景ロゴ -->
   <div>
     <img src="IMG_1705.jpeg" alt="Background Logo" class="main-image">
   </div>
+
+  <!-- ページ一番下の YouTube アイコン -->
+  <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" class="youtube-link">
+    <img src="youtube_logo.gif" alt="YouTube">
+  </a>
 </body>
 </html>
