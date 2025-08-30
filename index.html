@@ -1,9 +1,3 @@
-
-  </style>
-</head>
-<body>
-  <!-- ロゴ -->
-  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,40 +6,32 @@
   <title>Umbrella Dot Records</title>
   <style>
     body {
+      background-color: black;
       margin: 0;
       padding: 0;
-      background-color: #000; /* 背景は黒 */
       text-align: center;
-      font-family: 'Times New Roman', serif;
-      color: #fff;
     }
-
-    h1 {
-      font-size: 48px;
-      color: #cfe8dd; /* 淡いグリーン系（ロゴに合わせた色） */
-      text-shadow: 
-        2px 2px 0 #0f2f2a,   /* 濃い緑の縁取り */
-        -2px -2px 0 #0f2f2a,
-        2px -2px 0 #0f2f2a,
-        -2px 2px 0 #0f2f2a,
-        3px 3px 6px rgba(0,0,0,0.7); /* ぼかし影でビデオ感 */
-      margin-top: 40px;
-      margin-bottom: 20px;
+    .title-gif {
+      width: 600px; /* アニメーションロゴのサイズ */
+      max-width: 90%;
+      display: block;
+      margin: 40px auto 20px;
     }
-
     .logo {
-      width: 50%;
-      max-width: 500px;
-      height: auto;
+      width: 400px; /* 静止画ロゴのサイズ */
+      max-width: 80%;
+      display: block;
       margin: 20px auto;
     }
   </style>
 </head>
 <body>
-  <!-- タイトル文字 -->
-  <h1>Umbrella Dot Records</h1>
 
-  <!-- ロゴ画像 -->
-  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" class="logo">
+  <!-- アニメーションGIFロゴ -->
+  <img src="UDR_HP_logo_lightband_black.gif" alt="Umbrella Dot Records Logo" class="title-gif">
+
+  <!-- 静止画ロゴ -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records" class="logo">
+
 </body>
 </html>
