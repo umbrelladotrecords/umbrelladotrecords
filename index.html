@@ -5,47 +5,25 @@
   <title>Umbrella Dot Records</title>
   <style>
     body {
-      background-color: black;
-      color: white;
-      text-align: center;
-      font-family: Arial, sans-serif;
+      background:#000; color:#fff; text-align:center; font-family: Arial, sans-serif;
     }
     .main-logo {
-      margin-top: 100px;
-      width: 60%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 40px;
+      margin-top:100px; width:60%; max-width:600px; height:auto;
+      display:block; margin-left:auto; margin-right:auto; margin-bottom:40px;
     }
-    .sub-logo {
-      margin-top: 40px;
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-    }
+    .sub-logo { margin-top:40px; max-width:400px; width:100%; height:auto; }
+
     .sns-links {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 60px;
-      margin-bottom: 60px;
+      display:flex; justify-content:center; gap:50px; margin:60px 0;
     }
+    /* 共通（YouTube含む） */
     .sns-links img {
-      height: 120px;  /* デフォルトは120px */
-      width: auto;
-      transition: transform 0.3s;
-      cursor: pointer;
+      height:120px; width:auto; transition:transform .3s; cursor:pointer;
     }
-    /* Music Logo だけさらに70%縮小（84px → 59px） */
-    .music-logo {
-      height: 32px;
-    }
-    .sns-links img:hover {
-      transform: scale(1.2);
-    }
+    .sns-links img:hover { transform:scale(1.2); }
+
+    /* ← 必ず最後に置く：music だけ小さく */
+    .sns-links img.music-logo { height:59px !important; }
   </style>
 </head>
 <body>
@@ -58,12 +36,14 @@
   <!-- SNSリンク（横並び） -->
   <div class="sns-links">
     <!-- YouTube -->
-    <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank">
+    <a href="https://www.youtube.com/@umbrelladotrecords694" target="_blank" rel="noopener">
       <img src="youtube_logo.gif" alt="YouTube">
     </a>
 
     <!-- Music Link (Linkcore) -->
-    <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank">
-      <img src="music_logo.gif" alt="Music Link" class="music-logo">
+    <a href="https://linkco.re/R9DNs8c9?lang=ja&fbclid=PAZnRzaAMfy75leHRuA2FlbQIxMQABp3fiFXpDSosFtXBn16IBXKvpT6af1zxN3dQ8dcgdIELJlOLrHvtM13dDSp_f_aem_ZmfDG_EusN5oIjbhvFRAZw" target="_blank" rel="noopener">
+      <img src="music_logo.gif" alt="Music Link" class="music-logo" style="height:59px"> <!-- 念のためインラインでも指定 -->
     </a>
   </div>
+</body>
+</html>
