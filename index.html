@@ -1,64 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umbrella Dot Records</title>
-    <style>
-        /* 全体のスタイル */
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-            font-family: 'Times New Roman', serif;
-            color: #f0f0f0;
-        }
-
-        /* ロゴの配置 */
-        .logo {
-            width: 80%;
-            max-width: 400px;
-            margin: 30px auto 50px;
-            display: block;
-        }
-
-        /* リンクのデザイン */
-        .link-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .link-container a {
-            font-size: 20px;
-            text-decoration: none;
-            color: #f0f0f0;
-            border: 2px solid #f0f0f0;
-            padding: 10px 20px;
-            width: 250px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .link-container a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Umbrella Dot Records</title>
+  <style>
+    /* 画面中央にロゴをドン！ */
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: #000;               /* 黒背景 */
+      display: grid;
+      place-items: center;            /* 中央寄せ */
+    }
+    img {
+      width: min(90vw, 560px);        /* 端末に合わせて縮小 */
+      height: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- ロゴ -->
-    <img src="logo.png" alt="Umbrella Dot Records" class="logo">
-
-    <!-- リンク -->
-    <div class="link-container">
-        <a href="https://example.com/arsvna" target="_blank">バンドのホームページ</a>
-        <a href="https://example.com/music" target="_blank">バンドの曲を聴く</a>
-        <a href="https://example.com/aruyama" target="_blank">荒山のホームページ</a>
-    </div>
-
+  <!-- ここのファイル名はリポジトリの画像と完全一致させる（大文字小文字も） -->
+  <img src="IMG_1705.jpeg" alt="Umbrella Dot Records Logo" />
 </body>
 </html>
